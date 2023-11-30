@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OAuth Permission Request</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .permission-request {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .app-name {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="permission-request text-center">
+        <h1 class="app-name">Project Default Service Account</h1>
+        <p>This app would like to:</p>
+        <ul class="list-unstyled">
+            <li><i class="fas fa-check-square"></i> Have offline access</li>
+            <!-- Add more permissions here if needed -->
+        </ul>
+        <div class="mt-4">
+            <button id="accept" class="btn btn-primary">Accept</button>
+            <button class="btn btn-secondary">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.querySelector('#accept').addEventListener('click', function() {
+        alert('The permission to access your resource is accepted! Thank you!!');
+    });
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.0/js/all.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
